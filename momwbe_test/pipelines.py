@@ -93,8 +93,8 @@ class MongoPipeline:
     def __init__(self):
         self.client = pymongo.MongoClient("mongodb://localhost:27017/")
         self.db = self.client["momwbe"]
-        self.collection = self.db["momwbe"]
 
     def process_item(self, item, spider):
-        self.collection.insert_one(ItemAdapter(item).asdict())
+        col = self.db[f"momwbe_{spider.run_id}"]
+        col.insert_one(ItemAdapter(item).asdict())
         return item

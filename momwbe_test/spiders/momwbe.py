@@ -21,6 +21,7 @@ class MomwbeSpider(scrapy.Spider):
         if reset:
             self.db.drop_table()
         self.db.create_table()
+        self.run_id = self.db.log_run()
 
     def parse(self, response):
         formdata = {

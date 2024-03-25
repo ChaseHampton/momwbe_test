@@ -1,0 +1,20 @@
+services:
+  mongo:
+    image: mongodb/mongodb-community-server:latest
+    container_name: momwbe_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo:/data/db
+  crawler:
+    build: .
+    container_name: crawler
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://host.docker.internal:27017
+    volumes:
+      - momwbe:/app/.scrapy
+volumes:
+  mongo:
+  momwbe:

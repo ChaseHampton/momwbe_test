@@ -17,6 +17,9 @@ ITEM_PIPELINES = {
     "momwbe_test.common.common_pipes.PhoneReplacePipeline": 350,
     "momwbe_test.common.common_pipes.StringStripperPipeline": 375,
     "momwbe_test.common.common_pipes.NullRemovalPipeline": 380,
+    # "common-pipes.common_pipes.PhoneReplacePipeline": 350,
+    # "common-pipes.common_pipes.StringStripperPipeline": 375,
+    # "common-pipes.common_pipes.NullRemovalPipeline": 380,
     "momwbe_test.pipelines.MongoPipeline": 400,
 }
 
