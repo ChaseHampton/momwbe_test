@@ -1,0 +1,5 @@
+regex:
+  # https://regex101.com/r/kdCEf8/1
+  - name: 'us_phone'
+    pattern: '(?P<ccode>^\+?\s?\d[\s\-\(\.]?)??(?P<acode>[\(\- \.]{0,2}\d{3}[\)\-\s\.]{0,2})?(?P<primnum>\d{3}[\-\.\s]?\d{4})(?P<ext>\s[XxEe](?:\w+|\s)?[\.\,\-\:]? ?\d+)?'
+    description: 'US phone number'
